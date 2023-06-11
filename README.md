@@ -25,10 +25,10 @@ JSP M2 (Model 2) is an architectural pattern used in Java web development. It pr
 - [Bootstrap](https://getbootstrap.com/)
 Bootstrap is a popular CSS framework that provides a set of pre-designed UI components and styles. It enables the creation of responsive and visually appealing user interfaces without extensive CSS coding.
 
--[Material Design](https://m3.material.io/)
+- [Material Design](https://m3.material.io/)
 Material Design is a design language created by Google that offers a set of design guidelines and components for creating modern and visually consistent interfaces. It provides a clean and intuitive user experience across different devices and platforms.
 
--[Maven](https://maven.apache.org/)
+- [Maven](https://maven.apache.org/)
 Maven is used as a build automation tool and dependency management system for the Java project. It simplifies the process of managing project dependencies, compiling code, running tests, and packaging the application for deployment.
 
 ### Running Locally
