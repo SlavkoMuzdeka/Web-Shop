@@ -37,7 +37,7 @@ Maven is used as a build automation tool and dependency management system for th
 
 ##### JDK 17
 
-Java Development Kit (JDK) installed on your machine. Follow the instructions to install the latest version of JDK for your platform from the official Oracle website. [jdk docs](https://www.oracle.com/java/technologies/downloads/)
+Java Development Kit (JDK) installed on your machine. Follow the instructions to install the latest version of JDK for your platform from the official Oracle website -> [jdk docs](https://www.oracle.com/java/technologies/downloads/)
 
 #### Database Setup
 
@@ -48,10 +48,12 @@ To set up the database for your project, execute the provided SQL script, using 
 ```bash
   mysql -u <username> -p <database_name> < script.sql
 ```
-Replace <username> with your MySQL username and <database_name> with the name of your database. Enter the MySQL password when prompted.
+Replace `<username>` with your MySQL username and `<database_name>` with the name of your database. Enter the MySQL password when prompted.
   
 To populate your MySQL database with data, you can use the `data.sql` script provided. The `data.sql` script contains SQL statements to insert data into the respective tables.
   
 ```bash
   mysql -u <username> -p <database_name> < data.sql
 ```
+                                                   
+Make sure to replace `<username>` with your MySQL username, `<database_name>` with the name of your database, and data.sql with the actual name of your script if it differs. 
