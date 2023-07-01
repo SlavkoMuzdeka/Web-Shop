@@ -4,11 +4,11 @@ The User Support App is a web application designed for operators to handle user 
 
 ## Key Features
 
-- `<Login>`: To access the User Support App, operators need to have a separate account created directly in the database. The login form is available on the initial page, and upon successful authentication, operators are granted access to the support panel.
+- `<Login`: To access the User Support App, operators need to have a separate account created directly in the database. The login form is available on the initial page, and upon successful authentication, operators are granted access to the support panel.
 
-- `<Message Management>`: The User Support App displays a table with all incoming messages. Operators can view and manage unread messages, and by opening a message, its status is changed to "read." Operators can respond to messages by sending emails directly through the application.
+- `<Message Management`: The User Support App displays a table with all incoming messages. Operators can view and manage unread messages, and by opening a message, its status is changed to "read." Operators can respond to messages by sending emails directly through the application.
 
-- `<Search>`: The application allows operators to search for messages based on their content. This functionality helps operators quickly find relevant messages and provide efficient support to users.
+- `<Search`: The application allows operators to search for messages based on their content. This functionality helps operators quickly find relevant messages and provide efficient support to users.
 
 ## Technology Stack
 

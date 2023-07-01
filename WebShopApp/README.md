@@ -4,23 +4,23 @@ WebShopApp is a web application that enables users to buy and sell products. It 
 
 ## Key Features
 
- - `<Product Listing>`: Users can browse through a wide range of products offered by different sellers. Each product is accompanied by essential information such as price, condition (new or used), location, images, seller details, and contact information.
+ - `Product Listing`: Users can browse through a wide range of products offered by different sellers. Each product is accompanied by essential information such as price, condition (new or used), location, images, seller details, and contact information.
 
-- `<Filtering and Searching>`: The application allows users to easily filter and search for products based on specific criteria. This feature helps users find products that match their preferences quickly.
+- `Filtering and Searching`: The application allows users to easily filter and search for products based on specific criteria. This feature helps users find products that match their preferences quickly.
 
-- `<Pagination>`: To manage large product catalogs efficiently, the application implements pagination, enabling users to navigate through different pages of products seamlessly.
+- `Pagination`: To manage large product catalogs efficiently, the application implements pagination, enabling users to navigate through different pages of products seamlessly.
 
-- `<Detailed Product View>`: Users can view comprehensive details of a specific product, including all attributes and seller information. The detailed view provides a complete overview of the product, helping users make informed decisions.
+- `Detailed Product View`: Users can view comprehensive details of a specific product, including all attributes and seller information. The detailed view provides a complete overview of the product, helping users make informed decisions.
 
-- `<User Registration and Authentication>`: Users can create their accounts by providing necessary details such as name, address, username, password, and optional avatar. Account activation is done through a unique PIN code sent to the user's email. Once activated, users gain access to all the features and functionalities of the application.
+- `User Registration and Authentication`: Users can create their accounts by providing necessary details such as name, address, username, password, and optional avatar. Account activation is done through a unique PIN code sent to the user's email. Once activated, users gain access to all the features and functionalities of the application.
 
-- `<User Profile Management>`: Logged-in users can manage their profiles by updating personal information (excluding the username). Additionally, users can view their purchase history and manage their own product listings.
+- `User Profile Management`: Logged-in users can manage their profiles by updating personal information (excluding the username). Additionally, users can view their purchase history and manage their own product listings.
 
-- `<Buying and Selling>`: Users can purchase products by selecting their preferred payment method, such as card payment or cash on delivery. The application tracks purchases and updates the status of products accordingly. Users can also create new product listings to sell items to other users. They have full control over their active and completed listings, with the ability to remove any of their own listings.
+- `Buying and Selling`: Users can purchase products by selecting their preferred payment method, such as card payment or cash on delivery. The application tracks purchases and updates the status of products accordingly. Users can also create new product listings to sell items to other users. They have full control over their active and completed listings, with the ability to remove any of their own listings.
 
-- `<User Support>`: Registered users can contact the customer support team through a dedicated form within the application. User information and message content are stored to ensure efficient communication and support.
+- `User Support`: Registered users can contact the customer support team through a dedicated form within the application. User information and message content are stored to ensure efficient communication and support.
 
-- `<Responsive Design>`: The WebShopApp features a responsive design, providing a visually appealing and user-friendly experience across various devices.
+- `Responsive Design`: The WebShopApp features a responsive design, providing a visually appealing and user-friendly experience across various devices.
 
 ## Technology Stack
 
