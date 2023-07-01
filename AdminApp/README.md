@@ -4,13 +4,13 @@ The Admin App is a web application designed for administrators to manage the Web
 
 ## Key Features
 
-- `<Login`: To access the admin application, administrators need to have a direct account created in the database. The login form is available on the initial page, and upon successful authentication, administrators are granted access to the admin panel.
+- `Login`: To access the admin application, administrators need to have a direct account created in the database. The login form is available on the initial page, and upon successful authentication, administrators are granted access to the admin panel.
 
-- `<Categories`: The Categories section allows administrators to manage data related to categories and specific subcategories of products. It provides CRUD (Create, Read, Update, Delete) operations for managing category information effectively.
+- `Categories`: The Categories section allows administrators to manage data related to categories and specific subcategories of products. It provides CRUD (Create, Read, Update, Delete) operations for managing category information effectively.
 
-- `<Users`: The Users section enables administrators to manage data related to users of the WebShopApp. It provides CRUD operations for managing user information, allowing administrators to add, view, update, and delete user accounts as needed.
+- `Users`: The Users section enables administrators to manage data related to users of the WebShopApp. It provides CRUD operations for managing user information, allowing administrators to add, view, update, and delete user accounts as needed.
 
-- `<Statistics`: The Statistics section allows administrators to view logs and statistics related to the WebShopApp backend. It provides insights into the application's performance and usage, helping administrators monitor and analyze system activity.
+- `Statistics`: The Statistics section allows administrators to view logs and statistics related to the WebShopApp backend. It provides insights into the application's performance and usage, helping administrators monitor and analyze system activity.
 
 ## Technology Stack
 
