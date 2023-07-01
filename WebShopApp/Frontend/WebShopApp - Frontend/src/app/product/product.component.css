@@ -1,0 +1,268 @@
+.column-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.row-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-grow: 1;
+}
+
+.margin-left-right-10 {
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: #827091;
+}
+
+.margin-auto {
+    margin: auto;
+    text-align: center;
+}
+
+.padding-top-10 {
+    padding-top: 10px;
+}
+
+.image-container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+  
+.image-container img {
+    width: 100%;
+    height: auto;
+}
+
+.carousel-container {
+    position: relative;
+    box-shadow: 0 8px 16px #dce1e1;
+    border-radius: 15px;
+}
+
+.carousel-container img{
+    display: none;
+    border-radius: 15px;
+}
+
+.carousel-container img.image-active{
+    display: block;
+    width: 100%;
+}
+
+
+.carousel-dot-container {
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+.dot {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 5px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    transition: opacity 0.6s ease;
+    opacity: 0.5;
+}
+
+.active, .dot:hover {
+    opacity: 1;
+}
+
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.btn-carousel {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    background: 0 0;
+    border: 0;
+    cursor: pointer;
+}
+
+.btn-prev {
+    left: 0;
+}
+
+.btn-next {
+    right: 0;
+}
+
+.icon-carousel {
+    color: #fff;
+    opacity: 0.5;
+    transition: all 0.15s ease;
+}
+
+.icon-carousel:hover {
+    opacity: 0.9;
+}
+
+.icon-carousel:active {
+    opacity: 0.5;
+}
+
+.icon-next,
+.icon-prev {
+    font-size: 35px;
+}
+
+.card-style {
+    margin: 10px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.card-icon {
+    font-size: 20px;
+}
+
+.card-text {
+    margin-left: 5px;
+}
+
+.attribute-style {
+    padding-top: 30px;
+    padding-left: 5%;
+}
+
+.bottom-center-table {
+    text-align: center;
+    margin-bottom: 3%;
+    margin-left: 3%;
+    margin-right: 3%;
+    min-width: 0%;
+    width: 94%;
+}
+
+td {
+    border-bottom: 1px solid black;
+    font-size: 16px;
+}
+
+.max-width-850 {
+    max-width: 850px;
+}
+
+.description-card-style {
+    margin-bottom: 3%;
+    margin-left: 3%;
+    margin-right: 3%;
+    border-radius: 15px;
+    font-size: 16px;
+}
+
+.comment-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+}
+  
+.comment-card {
+    margin-bottom: 16px;
+    width: 100%;
+    max-width: 800px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+}
+  
+.comment-header {
+    display: flex;
+    align-items: center;
+}
+  
+.avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    overflow: hidden;
+}
+  
+.timestamp {
+    margin-left: auto;
+}
+  
+.comment-content {
+    padding: 16px;
+}
+  
+.text {
+    margin: 0;
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+  
+.comment-input {
+    width: 100%;
+}
+  
+.maring-top {
+    margin-top: 16px;
+}
+
+.margin-bottom {
+    margin-bottom: 10px;
+}
+
+.buy-button {
+    font-size: 20px;
+    margin-bottom: 10px;
+    height: 40px;
+    min-width: 200px;
+}
+
+.color-white {
+    color: white;
+}
+
+.new-comment-card {
+    width: 100%;
+    max-width: 800px;
+}
+
+.mat-spinner {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

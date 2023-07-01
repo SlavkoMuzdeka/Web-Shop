@@ -1,6 +1,7 @@
-# WebShopApp
+# WebShop
 
 ## Project Motivation
+
 The motivation behind this web programming project for the Internet Programming course is to create a practical and functional system that simulates the operations of a fictional web shop. The project aims to provide an immersive and engaging online shopping experience for users, as well as efficient management tools for administrators and a reliable customer support system.
 
 ## Getting started
@@ -31,29 +32,7 @@ Material Design is a design language created by Google that offers a set of desi
 - [Maven](https://maven.apache.org/)
 Maven is used as a build automation tool and dependency management system for the Java project. It simplifies the process of managing project dependencies, compiling code, running tests, and packaging the application for deployment.
 
+
 ### Running Locally
 
-#### Installing Dependencies
-
-##### JDK 17
-
-Java Development Kit (JDK) installed on your machine. Follow the instructions to install the latest version of JDK for your platform from the official Oracle website -> [jdk docs](https://www.oracle.com/java/technologies/downloads/)
-
-#### Database Setup
-
-Ensure that you have a MySQL database server installed and running on your local machine. You can download and install MySQL Community Edition from the official MySQL [website](https://dev.mysql.com/downloads/)
-
-To set up the database for your project, execute the provided SQL script, using `script.sql` file provided in `database` folder, using a MySQL client. You can run the script using the following command:
-
-```bash
-  mysql -u <username> -p <database_name> < script.sql
-```
-Replace `<username>` with your MySQL username and `<database_name>` with the name of your database. Enter the MySQL password when prompted.
-  
-To populate your MySQL database with data, you can use the `data.sql` script provided. The `data.sql` script contains SQL statements to insert data into the respective tables.
-  
-```bash
-  mysql -u <username> -p <database_name> < data.sql
-```
-                                                   
-Make sure to replace `<username>` with your MySQL username, `<database_name>` with the name of your database, and data.sql with the actual name of your script if it differs. 
+To run the WebShop locally, please refer to the README of each individual application (backend, WebShopApp, AdminApp, UserSupportApp) for detailed instructions on setting up the respective components.

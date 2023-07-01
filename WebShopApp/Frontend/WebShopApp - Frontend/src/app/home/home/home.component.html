@@ -1,0 +1,73 @@
+<div class="column-container">
+    <app-header title="Web Shop Application"></app-header>
+    <div class="row-container">
+        <div class="sidebar">
+            <app-category (categoryClicked)="filterProducts($event)"></app-category>
+            <mat-card *ngIf="attributes" class="margin-top-40">
+                <mat-card-header class="attribute-header">
+                    <mat-card-title>Attributes</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="padding-bottom-5">
+                    <table mat-table [dataSource]="attributes">
+                        <ng-container matColumnDef="name">
+                            <td mat-cell *matCellDef="let attribute">{{ attribute.name }}</td>
+                        </ng-container>
+                        <ng-container matColumnDef="userInput">
+                            <td mat-cell *matCellDef="let attribute">
+                                <div [ngSwitch]="attribute.type" class="margin-top-10 width-200">
+                                    <mat-form-field appearance="fill" *ngSwitchCase="'number'">
+                                        <mat-label>Enter number</mat-label>
+                                        <input matInput type="number" [(ngModel)]="attribute.userInput" min="0">
+                                    </mat-form-field>
+                                    <ng-container *ngSwitchCase="'boolean'">
+                                        <mat-checkbox [(ngModel)]="attribute.userInput"></mat-checkbox>
+                                    </ng-container>
+                                    <mat-form-field appearance="fill" *ngSwitchDefault>
+                                        <mat-label>Enter value</mat-label>
+                                        <input matInput type="text" [(ngModel)]="attribute.userInput">
+                                    </mat-form-field>
+                                </div>
+                            </td>
+                        </ng-container>
+                        <tr mat-row *matRowDef="let attribute; columns: ['name', 'userInput']"></tr>
+                    </table>
+                    <div class="filter-button-container">
+                        <button mat-button class="filter-button" *ngIf="attributes.length > 0" (click)="filter()">Filter</button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+        <div *ngIf="!products" class="mat-spinner">
+            <mat-spinner></mat-spinner>
+        </div>
+        <div *ngIf="products" class="main-content margin-20">
+            <div class="width-98 row-container-no-wrap">
+                <mat-form-field class="width-98 max-height-95">
+                    <input matInput placeholder="Search products" [(ngModel)]="searchText"
+                        (keyup.enter)="searchProducts()">
+                </mat-form-field>
+                <button mat-button *ngIf="isLogedIn()" class="add-new" (click)="addNew()">
+                    <fa-icon [icon]="faAdd" class="add-icon"></fa-icon>Add new
+                </button>
+            </div>
+            <div class="padding-bottom-50">
+                <div fxLayout="row wrap" fxLayoutGap="20px" style="flex-grow: 1;">
+                    <mat-card *ngFor="let product of products" class="product">
+                        <img class="image" mat-card-image src="data:image/png;base64,{{product.image?.img}}"
+                            alt="No photo">
+                        <mat-card-title>{{product.title}}</mat-card-title>
+                        <mat-card-content fxFlex>
+                            <p>Price: {{ product.price }} $</p>
+                            <button mat-button color="primary" [routerLink]="['/products', product.id]">
+                                View Details
+                            </button>
+                        </mat-card-content>
+                    </mat-card>
+                </div>
+            </div>
+            <mat-paginator [length]="total" [pageSizeOptions]="[3, 5, 10]" aria-label="Select page" class="pagination"
+                (page)="onPageChange($event)" [pageIndex]="pageIndex" [pageSize]="pageSize">
+            </mat-paginator>
+        </div>
+    </div>
+</div>

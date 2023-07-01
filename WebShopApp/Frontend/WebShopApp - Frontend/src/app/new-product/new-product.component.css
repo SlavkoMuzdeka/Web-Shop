@@ -1,0 +1,58 @@
+.create-product-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.create-product-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-file-upload {
+    padding: 16px 16px;
+    background-color: whitesmoke;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+  
+.custom-file-upload:hover {
+    background-color: #0069d9;
+}
+
+.mat-button-rounded {
+    border-radius: 25px;
+    font-size: 15px;
+    margin-top: 30px;
+}
+
+.header-container {
+    width: 100%;
+    padding-bottom: 50px;
+}
+
+.margin-top-40 {
+    margin-top: 40px;
+}
+
+.attribute-header {
+    background-color: rgb(44, 132, 253);
+    color: white;
+    padding: 20px 20px 20px 50px;
+}
+
+.padding-bottom-5 {
+    padding-bottom: 5px !important;
+}
+
+.margin-top-10 {
+    margin-top: 10px;
+}
+
+.width-200 {
+    width: 200px;
+}
+

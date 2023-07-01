@@ -1,0 +1,32 @@
+<div class="header" *ngIf="!isLogedIn()">
+    <h1 class="">{{ title }}</h1>
+    <a routerLink="/login" class="logo-link" routerLinkActive="primary">
+        <img src="/assets/enter.png" alt="Your logo" width="30px" height="30px" class="margin-20-right">
+    </a>
+</div>
+<div class="header" *ngIf="isLogedIn()">
+    <h1 class="">{{ title }}</h1>
+    <div class="account-options">
+        <img src="data:image/png;base64,{{ getAvatar() }}" alt="Avatar Icon" class="avatar-icon">
+        <div class="account-menu">
+            <button mat-button color="primary" (click)="showPurchasedProducts()" class="border-button height-70">
+                <mat-icon inline>shopping_cart</mat-icon> Purchased products
+            </button>
+            <button mat-button color="primary" (click)="showActiveProducts()"class="border-button height-70">
+                <mat-icon inline>local_offer</mat-icon> Active products
+            </button>
+            <button mat-button color="primary" (click)="showFinishedProducts()"class="border-button height-70">
+                <mat-icon inline>assignment_turned_in</mat-icon> Finished products
+            </button>
+            <button mat-button color="primary" (click)="sendMessageToUserSupport()" class="border-button height-50">
+                <mat-icon inline>sendMessageToUserSupport</mat-icon> User support
+            </button>
+            <button mat-button color="primary" (click)="changeAccountData()" class="border-button height-50">
+                <mat-icon inline>account_circle</mat-icon> Profile
+            </button>
+            <button mat-button color="primary" (click)="logout()" class="border-button height-50">
+                <mat-icon inline>exit_to_app</mat-icon> Logout
+            </button>
+        </div>
+    </div>
+</div>

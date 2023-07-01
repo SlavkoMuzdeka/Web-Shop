@@ -1,0 +1,138 @@
+<div class="margin-left-right-10 column-container">
+    <div *ngIf="!product" class="mat-spinner">
+        <mat-spinner></mat-spinner>
+    </div>
+    <div *ngIf="product">
+        <div class="column-container margin-auto padding-top-10 color-white">
+            <h1>{{ product.title }}</h1>
+            <h2><b>{{ product.price }} $</b></h2>
+            <p>Category: {{ product.category?.name }}</p>
+            <div *ngIf="logedIn && !product?.isSold">
+                <button mat-raised-button color="primary" class="buy-button" (click)="buyProduct()">Buy</button>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <div *ngIf="product?.images" class="carousel-container">
+                <img *ngFor="let image of product?.images; let i=index" src="data:image/png;base64,{{ image.img }}"
+                    alt="No-Image" [ngClass]="{'image-active': selectedIndex === i}" class="fade">
+                <div *ngIf="indicators" class="carousel-dot-container">
+                    <span *ngFor="let dot of product?.images; let i=index" class="dot"
+                        [ngClass]="{'active': selectedIndex === i}" (click)="selectImage(i)">
+                    </span>
+                </div>
+                <button *ngIf="controls" class="btn-carousel btn-prev">
+                    <fa-icon [icon]="faAngleLeft" class="icon-carousel icon-prev" (click)="onPrevClick()"></fa-icon>
+                </button>
+                <button *ngIf="controls" class="btn-carousel btn-next">
+                    <fa-icon [icon]="faAngleRight" class="icon-carousel icon-next" (click)="onNextClick()"></fa-icon>
+                </button>
+            </div>
+        </div>
+
+        <div class="margin-auto padding-top-10 max-width-850">
+            <div class="row-container">
+                <mat-card class="card-style">
+                    <mat-card-content class="row-container">
+                        <fa-icon [icon]="faTag" class="card-icon"></fa-icon>
+                        <p class="card-text">{{ product.type }}</p>
+                    </mat-card-content>
+                </mat-card>
+
+                <mat-card class="card-style">
+                    <mat-card-content class="row-container">
+                        <fa-icon [icon]="faLocationDot" class="card-icon"></fa-icon>
+                        <p class="card-text">Location: {{ product.location }}</p>
+                    </mat-card-content>
+                </mat-card>
+
+                <mat-card class="card-style">
+                    <mat-card-content class="row-container">
+                        <fa-icon [icon]="faClock" class="card-icon"></fa-icon>
+                        <p class="card-text">Release date: {{ product.creationDate }}</p>
+                    </mat-card-content>
+                </mat-card>
+
+                <mat-card class="card-style">
+                    <mat-card-content class="row-container">
+                        <fa-icon [icon]="faContactCard" class="card-icon"></fa-icon>
+                        <p class="card-text">Contact: {{ product.contact }}</p>
+                    </mat-card-content>
+                </mat-card>
+
+                <mat-card class="card-style">
+                    <mat-card-content class="row-container">
+                        <fa-icon [icon]="faMailForward" class="card-icon"></fa-icon>
+                        <p class="card-text">Seller: {{ product.seller?.firstName }} {{ product.seller?.lastName }}
+                            ({{
+                            product.seller?.mail }})</p>
+                    </mat-card-content>
+                </mat-card>
+                <mat-card class="card-style">
+                    <mat-card-content class="row-container">
+                        <fa-icon [icon]="product.isSold ? faCheckCircle : faTimesCircle" class="card-icon"></fa-icon>
+                        <p class="card-text">{{ product.isSold ? 'Purchased' : 'Not Purchased' }}</p>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+
+        <h1 class="attribute-style color-white">Attributes</h1>
+
+        <table mat-table [dataSource]="dataSource" class="bottom-center-table mat-elevation-z8">
+            <ng-container matColumnDef="attribute">
+                <td *matCellDef="let element">{{element.attributeEnt.name}}</td>
+            </ng-container>
+            <ng-container matColumnDef="value">
+                <td *matCellDef="let element">{{element.attribute}}</td>
+            </ng-container>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <h1 class="attribute-style color-white">Description</h1>
+
+        <mat-card class="description-card-style">
+            <mat-card-content>
+                <p class="card-text">{{ product.description }}</p>
+            </mat-card-content>
+        </mat-card>
+
+        <h1 class="attribute-style color-white">Comments</h1>
+
+        <div class="comment-section">
+            <ng-container *ngFor="let comment of product?.comments; let i = index">
+                <mat-card *ngIf="i < visibleComments || showAllComments" class="comment-card">
+                    <mat-card-header class="comment-header">
+                        <div class="avatar" mat-card-avatar>
+                            <img src="data:image/png;base64,{{ comment.user?.avatar }}" alt="" style="width: 100%;">
+                        </div>
+                        <mat-card-title class="author">{{ comment.user?.firstName }}</mat-card-title>
+                        <mat-card-subtitle class="timestamp">{{ comment.creationDate | date:'dd.MM.yyyy'
+                            }}</mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content class="comment-content">
+                        <p class="text">{{ comment.text }}</p>
+                    </mat-card-content>
+                </mat-card>
+            </ng-container>
+
+            <div class="toggle-button" *ngIf="(product?.comments ?? []).length > visibleComments">
+                <button mat-raised-button (click)="showAllComments = !showAllComments">
+                    {{ showAllComments ? 'Show less' : 'Show all' }}
+                </button>
+            </div>
+
+            <div *ngIf="logedIn" class="maring-top new-comment-card">
+                <mat-card>
+                    <form (ngSubmit)="postComment()" class="column-container margin-bottom">
+                        <mat-form-field class="comment-input">
+                            <textarea matInput name="commentText" [(ngModel)]="newComment.text"
+                                placeholder="Write a comment"></textarea>
+                        </mat-form-field>
+                        <button mat-raised-button color="primary" type="submit">Post comment</button>
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Korisnicka podrska</h1>
+<button mat-icon-button class="exit-button" (click)="closeDialog()">
+    <mat-icon>close</mat-icon>
+</button>
+<div mat-dialog-content>
+    <p>Posaljite poruku korisnickoj podrsci: </p>
+    <form (ngSubmit)="sendMessage()" class="column-container margin-bottom">
+        <mat-form-field>
+            <input matInput name="title" [(ngModel)]="message.title" placeholder="Enter title">
+        </mat-form-field>
+        <mat-form-field>
+            <textarea matInput name="content" [(ngModel)]="message.content" placeholder="Enter message"></textarea>
+        </mat-form-field>
+        <div style="text-align: center;">
+            <button mat-raised-button color="primary" type="submit">Posalji</button>
+        </div>
+    </form>
+</div>

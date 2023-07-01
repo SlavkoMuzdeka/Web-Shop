@@ -1,0 +1,78 @@
+.header {
+    position: relative;
+    padding: 30px;
+    background-color: #FDA52C;
+    color: white;
+}
+  
+.header h1 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 30px;
+}
+  
+.header img:not(.avatar-icon) {
+    position: absolute;
+    right: 10px;
+}
+
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.margin-20-right {
+    margin-right: 20px;
+}
+
+.account-options {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.avatar-icon {
+    width: 40px;
+    border-radius: 50%;
+    margin-top: 10px;
+    margin-right: 40px;
+}
+  
+.account-menu {
+    display: none;
+    position: absolute;
+    top: 48px;
+    right: 0;
+    background-color: #fff;
+    padding: 8px;
+    border: 1px solid #ccc;
+    z-index: 1;
+    margin-right: 10px;
+}
+  
+.account-menu button {
+    display: block;
+    width: 100%;
+    margin-bottom: 8px;
+}
+  
+.account-options:hover .account-menu {
+    display: block;
+}
+
+.border-button {
+    border: 1px solid black;
+}
+
+.height-50 {
+    height: 50px;
+}
+
+.height-70 {
+    height: 70px;
+}
+
+   

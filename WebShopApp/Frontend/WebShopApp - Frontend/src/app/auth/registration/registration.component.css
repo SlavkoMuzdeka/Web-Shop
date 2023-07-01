@@ -1,0 +1,37 @@
+.registration-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.registration-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.registration-heading {
+    font-size: 35px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.mat-button-rounded {
+    border-radius: 25px;
+    font-size: 15px;
+}
+
+.custom-file-upload {
+    padding: 16px 16px;
+    background-color: whitesmoke;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+  
+.custom-file-upload:hover {
+    background-color: #0069d9;
+}
+  

@@ -1,0 +1,24 @@
+<div *ngIf="products" class="main-content margin-20">
+    <div class="padding-bottom-50">
+        <div fxLayout="row wrap" fxLayoutGap="30px" style="flex-grow: 1;">
+            <mat-card *ngFor="let product of products" class="product">
+                <img class="image" mat-card-image src="data:image/png;base64,{{product.image?.img}}" alt="No photo">
+                <mat-card-title>{{product.title}}</mat-card-title>
+                <mat-card-content fxFlex>
+                    <p>Price: {{ product.price }} $</p>
+                    <button mat-button color="primary" [routerLink]="['/products', product.id]">
+                        View Details
+                    </button>
+                    <button *ngIf="!isPurchasedProduct()" mat-button color="primary"
+                        (click)="deleteProduct(product.id)">
+                        Delete
+                    </button>
+                    <button *ngIf="isFinished(product.id) && !isPurchasedProduct()" mat-button color="primary"
+                        (click)="finishProduct(product.id)">
+                        Finish
+                    </button>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

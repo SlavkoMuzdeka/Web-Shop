@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Nacin kupovine</h1>
+<button mat-icon-button class="exit-button" (click)="closeDialog()">
+    <mat-icon>close</mat-icon>
+</button>
+<div mat-dialog-content>
+    Izaberite nacina na koji zelite platiti proizvod
+</div>
+<div mat-dialog-actions *ngIf="!showCardInput">
+    <button mat-button (click)="withCard()">Karticno</button>
+    <button mat-button (click)="withoutCard()">Prilikom preuzimanja</button>
+</div>
+<div *ngIf="showCardInput">
+    <mat-card>
+        <form (ngSubmit)="payWithCard()" class="column-container margin-bottom">
+            <mat-form-field class="comment-input">
+                <textarea matInput name="commentText" [(ngModel)]="cardNumber.text" placeholder="Unesite broj kartice"
+                    style="resize: none;"></textarea>
+            </mat-form-field>
+            <div style="text-align: center;">
+                <button mat-raised-button color="primary" type="submit">Buy product</button>
+            </div>
+        </form>
+    </mat-card>
+</div>

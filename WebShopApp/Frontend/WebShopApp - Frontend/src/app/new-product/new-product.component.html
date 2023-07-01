@@ -1,0 +1,87 @@
+<div class="create-product-container">
+    <app-header title="Create new product" class="header-container"></app-header>
+    <form [formGroup]="form" class="create-product-form">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Title</mat-label>
+            <input matInput type="text" formControlName="title" required autocomplete="off" />
+            <mat-error>{{ getErrorMessage('title') }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Description</mat-label>
+            <input matInput type="text" formControlName="description" required autocomplete="off" />
+            <mat-error>{{ getErrorMessage('description') }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Price</mat-label>
+            <input matInput type="number" formControlName="price" required autocomplete="off" min="0" />
+            <mat-error>{{ getErrorMessage('price') }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Location</mat-label>
+            <input matInput type="text" formControlName="location" required autocomplete="off" />
+            <mat-error>{{ getErrorMessage('location') }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Contact</mat-label>
+            <input matInput type="text" formControlName="contact" required autocomplete="off" />
+            <mat-error>{{ getErrorMessage('contact') }}</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-select placeholder="Type of product" formControlName="type" required>
+                <mat-option value="NEW">New</mat-option>
+                <mat-option value="SECOND_HAND">Second Hand</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <label for="image-upload" class="custom-file-upload">
+            Choose images...
+        </label>
+        <input id="image-upload" type="file" accept=".jpg,.jpeg,.png, .jfif" style="display: none;"
+            (change)="onFileSelected($event)" multiple>
+
+        <app-category (categoryClicked)="showAttributes($event)"></app-category>
+
+        <mat-card *ngIf="attributes" class="margin-top-40">
+            <mat-card-header class="attribute-header">
+                <mat-card-title>Attributes</mat-card-title>
+            </mat-card-header>
+            <mat-card-content class="padding-bottom-5">
+                <table mat-table [dataSource]="attributes">
+                    <ng-container matColumnDef="name">
+                        <td mat-cell *matCellDef="let attribute">{{ attribute.name }}</td>
+                    </ng-container>
+                    <ng-container matColumnDef="userInput">
+                        <td mat-cell *matCellDef="let attribute">
+                            <div [ngSwitch]="attribute.type" class="margin-top-10 width-200">
+                                <mat-form-field appearance="fill" *ngSwitchCase="'number'">
+                                <mat-label>Enter number</mat-label>
+                                <input matInput type="number" [(ngModel)]="attribute.userInput" [ngModelOptions]="{standalone: true}" min="0">
+                            </mat-form-field>
+                                <ng-container *ngSwitchCase="'boolean'">
+                                <mat-checkbox [(ngModel)]="attribute.userInput" [ngModelOptions]="{standalone: true}"></mat-checkbox>
+                            </ng-container>
+                                <mat-form-field appearance="fill" *ngSwitchDefault>
+                                    <mat-label>Enter value</mat-label>
+                                    <input matInput type="text" [(ngModel)]="attribute.userInput" [ngModelOptions]="{standalone: true}">
+                                </mat-form-field>
+                            </div>
+                        </td>
+                    </ng-container>
+                    <tr mat-row *matRowDef="let attribute; columns: ['name', 'userInput']"></tr>
+                </table>
+            </mat-card-content>
+        </mat-card>
+
+
+        <button mat-raised-button color="primary" [disabled]="form.invalid" class="mat-button-rounded"
+            (click)="createProduct()">
+            Create
+        </button>
+    </form>
+</div>

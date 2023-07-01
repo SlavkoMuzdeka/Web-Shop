@@ -1,0 +1,7 @@
+<div class="column-container">
+    <app-header title="Purchased Products"></app-header>
+    <div *ngIf="!products" class="mat-spinner">
+        <mat-spinner></mat-spinner>
+    </div>
+    <app-product-card [products]=products title="Purchased Products"></app-product-card>
+</div>
